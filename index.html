@@ -1,0 +1,659 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>単独槽転換ボード｜単独処理浄化槽の残存基数と市町村の転換補助金</title>
+<meta name="description" content="全国に残る単独処理浄化槽は3,290,611基。市町村22件の転換補助金（補助上限額・撤去費・受付期間）と、都道府県別の残存基数・浄化槽工事業者数を並べたデータベース。出典リンク付き。">
+<style>
+:root{--bg:#f2f7f4;--panel:#fff;--ink:#12291f;--sub:#5d7a6c;--ac:#0f7a52;--ac2:#0a5c3e;--hot:#c2410c;--line:#dceae2}
+@media(prefers-color-scheme:dark){:root{--bg:#08150f;--panel:#0f2018;--ink:#dbeae2;--sub:#8aa79a;--ac:#3fbf8b;--ac2:#2a9a6d;--hot:#f97316;--line:#1c3428}}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-text-size-adjust:100%}
+header{background:linear-gradient(140deg,var(--ac2),#04301f);color:#fff;padding:30px 0 26px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+h1{margin:0;font-size:22px;letter-spacing:.01em}
+.tag{opacity:.9;margin-top:8px;font-size:13.5px}
+.kpis{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.kpi{background:rgba(255,255,255,.13);border-radius:10px;padding:8px 12px;font-size:12px;line-height:1.35}
+.kpi b{display:block;font-size:17px;font-weight:700;margin-top:2px}
+h2{font-size:17px;margin:34px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--ac)}
+.lead{font-size:13px;color:var(--sub);margin:6px 0 14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.tools input,.tools select{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);flex:1;min-width:130px}
+.c{display:flex;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px;margin:9px 0}
+.rk{flex:0 0 30px;font-size:15px;font-weight:700;color:var(--ac);text-align:center;padding-top:2px}
+.cb{flex:1;min-width:0}
+.cb h3{margin:0 0 5px;font-size:16.5px;display:flex;flex-wrap:wrap;align-items:baseline;gap:7px}
+.pf{font-size:12px;color:var(--sub);font-weight:400}
+.warn{font-size:10.5px;background:var(--line);color:var(--sub);border-radius:5px;padding:1px 6px;font-weight:400}
+.tot{font-size:13px;color:var(--sub)}.tot b{font-size:17px;color:var(--hot)}
+.bits{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.bits span{font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:2px 8px}
+.u{opacity:.6;font-size:10.5px}
+.m{font-size:12.5px;color:var(--sub);margin-top:4px;word-break:break-word}
+.m a{color:var(--ac);text-decoration:none;font-weight:600}
+.ctx b{color:var(--ink)}
+.soon{background:var(--hot);color:#fff;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:700;margin-left:3px}
+.past{background:var(--line);color:var(--sub);border-radius:6px;padding:1px 7px;font-size:11px;margin-left:3px}
+.tw{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:620px}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{background:var(--bg);font-size:11.5px;color:var(--sub);font-weight:600;position:sticky;top:0}
+td.n{text-align:right;font-variant-numeric:tabular-nums}td.b{font-weight:700}
+.pn{font-weight:600}
+tr:last-child td{border-bottom:0}
+.note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--ac);border-radius:10px;padding:13px 15px;font-size:12.5px;color:var(--sub);margin:16px 0}
+.note b{color:var(--ink)}.note ul{margin:7px 0 0;padding-left:19px}.note li{margin:3px 0}
+footer{text-align:center;color:var(--sub);font-size:11.5px;padding:26px 16px 46px;line-height:1.9}
+.empty{color:var(--sub);font-size:13px;padding:12px}
+</style></head><body>
+<header><div class="wrap">
+<h1>単独槽転換ボード</h1>
+<div class="tag">単独処理浄化槽は、どの市町村にあと何基残っているか。市町村の転換補助金（上限額・撤去費・受付期間）と、都道府県の残存基数・登録工事業者数を並べた、受注余地の下調べ用データベース。</div>
+<div class="kpis">
+  <div class="kpi">全国に残る単独処理浄化槽<b>3,290,611基</b></div>
+  <div class="kpi">国庫助成による単独転換（令和6年度）<b>9,905基</b></div>
+  <div class="kpi">浄化槽工事業 登録<b>24,969者</b></div>
+  <div class="kpi">この実績のままなら解消まで<b>332年</b></div>
+</div>
+</div></header>
+<main><div class="wrap">
+
+<h2>① 市町村の転換補助金（22件）</h2>
+<div class="lead">単独処理浄化槽・くみ取り便槽からの転換に、施主が受け取れる補助の<b>上限</b>の合計（本体＋撤去費＋宅内配管）が大きい順。金額・受付期間は各市町村の公開ページに書かれている値のみ。<br>浄化槽の型式（高度処理型など）で補助額を分けている市町村では、<b>最も高い区分の上限</b>を採っています。標準的な区分はこれより低くなります。</div>
+<div class="tools">
+  <input id="q" type="search" placeholder="市町村名・都道府県で絞り込む" aria-label="絞り込み">
+  <select id="pf"><option value="">すべての都道府県</option><option>北海道</option><option>千葉県</option><option>埼玉県</option><option>広島県</option><option>徳島県</option><option>栃木県</option><option>熊本県</option><option>神奈川県</option><option>群馬県</option><option>茨城県</option><option>静岡県</option><option>香川県</option></select>
+</div>
+<div id="list"><article class="c" data-t="茨城県小美玉市浄化槽の設置費用への補助金（高度処理型合併処理浄化槽設置費補助金）" data-pref="茨城県">
+  <div class="rk">1</div>
+  <div class="cb">
+    <h3>小美玉市<span class="pf">茨城県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>212万円</b></div>
+    <div class="bits"><span>本体 164万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-13 〜 — ｜枠 N型30基（11,535千円）・NP型10基（11,428千円）｜令和8年度</div>
+    <div class="m ctx">茨城県の単独槽 残存 <b>79,572基</b>｜浄化槽工事業 953者｜<b>1社あたり 83基</b></div>
+    <div class="m"><a href="https://www.city.omitama.lg.jp/0116/info-0000012174-0.html" target="_blank" rel="noopener">浄化槽の設置費用への補助金（高度処理型合併処理浄化槽設置費補助金） — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="茨城県笠間市令和8年度合併処理浄化槽設置補助金" data-pref="茨城県">
+  <div class="rk">2</div>
+  <div class="cb">
+    <h3>笠間市<span class="pf">茨城県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>212万円</b></div>
+    <div class="bits"><span>本体 164万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-15 〜 2027-01-29 ｜令和8年度</div>
+    <div class="m ctx">茨城県の単独槽 残存 <b>79,572基</b>｜浄化槽工事業 953者｜<b>1社あたり 83基</b></div>
+    <div class="m"><a href="https://www.city.kasama.lg.jp/sp/page/page001144.html" target="_blank" rel="noopener">令和8年度合併処理浄化槽設置補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="神奈川県厚木市令和8年度合併処理浄化槽整備事業補助金" data-pref="神奈川県">
+  <div class="rk">3</div>
+  <div class="cb">
+    <h3>厚木市<span class="pf">神奈川県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>140.4万円</b></div>
+    <div class="bits"><span>本体 125.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span></div>
+    <div class="m">受付 2026-04-01 〜 2027-03-31 ｜令和8年度</div>
+    <div class="m ctx">神奈川県の単独槽 残存 <b>86,069基</b>｜浄化槽工事業 544者｜<b>1社あたり 158基</b></div>
+    <div class="m"><a href="https://www.city.atsugi.kanagawa.jp/soshiki/seikatsukankyoka/1/1/51349.html" target="_blank" rel="noopener">令和8年度合併処理浄化槽整備事業補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="神奈川県小田原市令和8年度合併処理浄化槽整備費補助金" data-pref="神奈川県">
+  <div class="rk">4</div>
+  <div class="cb">
+    <h3>小田原市<span class="pf">神奈川県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>135.4万円</b></div>
+    <div class="bits"><span>本体 135.4万円<span class="u">/7人槽</span></span></div>
+    <div class="m">受付 2026-04-15 〜 — ｜令和8年度</div>
+    <div class="m ctx">神奈川県の単独槽 残存 <b>86,069基</b>｜浄化槽工事業 544者｜<b>1社あたり 158基</b></div>
+    <div class="m"><a href="https://www.city.odawara.kanagawa.jp/field/envi/hygiene-clean/jokaso/p22213.html" target="_blank" rel="noopener">令和8年度合併処理浄化槽整備費補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="神奈川県南足柄市南足柄市合併処理浄化槽設置補助金" data-pref="神奈川県">
+  <div class="rk">5</div>
+  <div class="cb">
+    <h3>南足柄市<span class="pf">神奈川県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>120.4万円</b></div>
+    <div class="bits"><span>本体 120.4万円<span class="u">/7人槽</span></span></div>
+    <div class="m">受付 2026-05-18 〜 — ｜令和8年度</div>
+    <div class="m ctx">神奈川県の単独槽 残存 <b>86,069基</b>｜浄化槽工事業 544者｜<b>1社あたり 158基</b></div>
+    <div class="m"><a href="https://www.city.minamiashigara.kanagawa.jp/kurashi/gomi/kankyou/jyoukasou_hojyokin.html" target="_blank" rel="noopener">南足柄市合併処理浄化槽設置補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="千葉県船橋市高度処理型合併処理浄化槽の転換設置に対する補助金制度" data-pref="千葉県">
+  <div class="rk">6</div>
+  <div class="cb">
+    <h3>船橋市<span class="pf">千葉県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>108万円</b></div>
+    <div class="bits"><span>本体 57万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 18万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-01 〜 2026-12-28 ｜令和8年度</div>
+    <div class="m ctx">千葉県の単独槽 残存 <b>183,837基</b>｜浄化槽工事業 1,257者｜<b>1社あたり 146基</b></div>
+    <div class="m"><a href="https://www.city.funabashi.lg.jp/machi/gesui/008/p003458.html" target="_blank" rel="noopener">高度処理型合併処理浄化槽の転換設置に対する補助金制度 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="熊本県熊本市合併処理浄化槽設置補助金" data-pref="熊本県">
+  <div class="rk">7</div>
+  <div class="cb">
+    <h3>熊本市<span class="pf">熊本県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>96.6万円</b></div>
+    <div class="bits"><span>本体 48.6万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 記載なし ｜令和8年度</div>
+    <div class="m ctx">熊本県の単独槽 残存 <b>50,728基</b>｜浄化槽工事業 792者｜<b>1社あたり 64基</b></div>
+    <div class="m"><a href="https://www.city.kumamoto.jp/kiji00363/index.html" target="_blank" rel="noopener">合併処理浄化槽設置補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="北海道北広島市北広島市浄化槽設置整備事業補助金" data-pref="北海道">
+  <div class="rk">8</div>
+  <div class="cb">
+    <h3>北広島市<span class="pf">北海道</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>95.4万円</b></div>
+    <div class="bits"><span>本体 47.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 記載なし ｜枠 先着順・予算枠に達した時点で終了（令和8年度は予算枠到達により受付終了）｜令和8年度</div>
+    <div class="m ctx">北海道の単独槽 残存 <b>17,900基</b>｜浄化槽工事業 806者｜<b>1社あたり 22基</b></div>
+    <div class="m"><a href="https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00159029.html" target="_blank" rel="noopener">北広島市浄化槽設置整備事業補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="千葉県柏市柏市合併処理浄化槽設置奨励補助金" data-pref="千葉県">
+  <div class="rk">9</div>
+  <div class="cb">
+    <h3>柏市<span class="pf">千葉県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>89.4万円</b></div>
+    <div class="bits"><span>本体 41.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-01 〜 2026-12-28 ｜令和8年度</div>
+    <div class="m ctx">千葉県の単独槽 残存 <b>183,837基</b>｜浄化槽工事業 1,257者｜<b>1社あたり 146基</b></div>
+    <div class="m"><a href="https://www.city.kashiwa.lg.jp/kankyoseisaku/ecosite/suishitsudojo/jokaso/hojokin.html" target="_blank" rel="noopener">柏市合併処理浄化槽設置奨励補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="広島県福山市小型浄化槽設置整備事業補助金（小型浄化槽補助金制度）" data-pref="広島県">
+  <div class="rk">10</div>
+  <div class="cb">
+    <h3>福山市<span class="pf">広島県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>89.4万円</b></div>
+    <div class="bits"><span>本体 41.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-01 〜 — ｜2026年度</div>
+    <div class="m ctx">広島県の単独槽 残存 <b>66,530基</b>｜浄化槽工事業 717者｜<b>1社あたり 93基</b></div>
+    <div class="m"><a href="https://www.city.fukuyama.hiroshima.jp/site/kankyo/291471.html" target="_blank" rel="noopener">小型浄化槽設置整備事業補助金（小型浄化槽補助金制度） — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="栃木県高根沢町浄化槽設置整備費補助金制度" data-pref="栃木県">
+  <div class="rk">11</div>
+  <div class="cb">
+    <h3>高根沢町<span class="pf">栃木県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>89.4万円</b></div>
+    <div class="bits"><span>本体 41.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 記載なし ｜令和8年度</div>
+    <div class="m ctx">栃木県の単独槽 残存 <b>48,555基</b>｜浄化槽工事業 333者｜<b>1社あたり 146基</b></div>
+    <div class="m"><a href="https://www.town.takanezawa.tochigi.jp/life/suido/gesuido/jokaso.html" target="_blank" rel="noopener">浄化槽設置整備費補助金制度 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="神奈川県三浦市合併処理浄化槽設置費補助" data-pref="神奈川県">
+  <div class="rk">12</div>
+  <div class="cb">
+    <h3>三浦市<span class="pf">神奈川県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>89.4万円</b></div>
+    <div class="bits"><span>本体 41.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-01 〜 2026-12-15 ｜令和8年度</div>
+    <div class="m ctx">神奈川県の単独槽 残存 <b>86,069基</b>｜浄化槽工事業 544者｜<b>1社あたり 158基</b></div>
+    <div class="m"><a href="https://www.city.miura.kanagawa.jp/soshiki/gesuidoka/254.html" target="_blank" rel="noopener">合併処理浄化槽設置費補助 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="茨城県常総市合併処理浄化槽設置補助事業" data-pref="茨城県">
+  <div class="rk">13</div>
+  <div class="cb">
+    <h3>常総市<span class="pf">茨城県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>89.4万円</b></div>
+    <div class="bits"><span>本体 41.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 15万円</span><span>宅内配管工事費 33万円</span></div>
+    <div class="m">受付 2026-04-15 〜 2026-07-02 <span class="past">受付終了</span>｜令和8年度</div>
+    <div class="m ctx">茨城県の単独槽 残存 <b>79,572基</b>｜浄化槽工事業 953者｜<b>1社あたり 83基</b></div>
+    <div class="m"><a href="https://www.city.joso.lg.jp/kurashi_gyousei/kurashi/suidou_jyutaku/water_sewage/sewer/jokaso/jyokaso_hojyo.html" target="_blank" rel="noopener">合併処理浄化槽設置補助事業 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="徳島県藍住町令和８年度合併処理浄化槽設置整備事業補助金" data-pref="徳島県">
+  <div class="rk">14</div>
+  <div class="cb">
+    <h3>藍住町<span class="pf">徳島県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>88.2万円</b></div>
+    <div class="bits"><span>本体 46.2万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 12万円</span><span>宅内配管工事費 30万円</span></div>
+    <div class="m">受付 — 〜 2026-12-28 ｜令和8年度</div>
+    <div class="m ctx">徳島県の単独槽 残存 <b>123,332基</b>｜浄化槽工事業 305者｜<b>1社あたり 404基</b></div>
+    <div class="m"><a href="https://www.town.aizumi.lg.jp/docs/2025040100037/" target="_blank" rel="noopener">令和８年度合併処理浄化槽設置整備事業補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="栃木県小山市浄化槽設置費補助金" data-pref="栃木県">
+  <div class="rk">15</div>
+  <div class="cb">
+    <h3>小山市<span class="pf">栃木県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>75.2万円</b></div>
+    <div class="bits"><span>本体 33.2万円<span class="u">/5人槽</span></span><span>単独槽の撤去費 12万円</span><span>宅内配管工事費 30万円</span></div>
+    <div class="m">受付 2026-04-01 〜 — ｜枠 新設 約80基、転換 約70基｜令和8年度</div>
+    <div class="m ctx">栃木県の単独槽 残存 <b>48,555基</b>｜浄化槽工事業 333者｜<b>1社あたり 146基</b></div>
+    <div class="m"><a href="https://www.city.oyama.tochigi.jp/kurashi/suido-gesuido/gesuido/joukasouhojokinn-reiwa8nenndo.html" target="_blank" rel="noopener">浄化槽設置費補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="埼玉県越生町合併処理浄化槽設置費補助金" data-pref="埼玉県">
+  <div class="rk">16</div>
+  <div class="cb">
+    <h3>越生町<span class="pf">埼玉県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>73.4万円</b></div>
+    <div class="bits"><span>本体 49.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 9万円</span><span>宅内配管工事費 15万円</span></div>
+    <div class="m">受付 記載なし </div>
+    <div class="m ctx">埼玉県の単独槽 残存 <b>220,125基</b>｜浄化槽工事業 1,034者｜<b>1社あたり 213基</b></div>
+    <div class="m"><a href="https://www.town.ogose.saitama.jp/kamei/machi/kankyo/gyomuannai/kankyoeisei/1450931740530.html" target="_blank" rel="noopener">合併処理浄化槽設置費補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="埼玉県さいたま市浄化槽設置整備事業補助金" data-pref="埼玉県">
+  <div class="rk">17</div>
+  <div class="cb">
+    <h3>さいたま市<span class="pf">埼玉県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>71.4万円</b></div>
+    <div class="bits"><span>本体 41.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 10万円</span><span>宅内配管工事費 20万円</span></div>
+    <div class="m">受付 2026-04-01 〜 2027-01-29 ｜令和8年度</div>
+    <div class="m ctx">埼玉県の単独槽 残存 <b>220,125基</b>｜浄化槽工事業 1,034者｜<b>1社あたり 213基</b></div>
+    <div class="m"><a href="https://www.city.saitama.lg.jp/001/009/013/p002373.html" target="_blank" rel="noopener">浄化槽設置整備事業補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="群馬県館林市合併処理浄化槽への転換補助" data-pref="群馬県">
+  <div class="rk">18</div>
+  <div class="cb">
+    <h3>館林市<span class="pf">群馬県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>67.4万円</b></div>
+    <div class="bits"><span>本体 37.4万円<span class="u">/7人槽</span></span><span>宅内配管工事費 30万円</span></div>
+    <div class="m">受付 — 〜 2027-01-29 ｜枠 予算額に達した時点で受付終了</div>
+    <div class="m ctx">群馬県の単独槽 残存 <b>153,769基</b>｜浄化槽工事業 933者｜<b>1社あたり 165基</b></div>
+    <div class="m"><a href="https://www.city.tatebayashi.gunma.jp/s025/kurashi/120/090/030/20200108044000.html" target="_blank" rel="noopener">合併処理浄化槽への転換補助 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="香川県まんのう町まんのう町合併処理浄化槽設置整備事業補助金" data-pref="香川県">
+  <div class="rk">19</div>
+  <div class="cb">
+    <h3>まんのう町<span class="pf">香川県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>65万円</b></div>
+    <div class="bits"><span>本体 65万円<span class="u">/7人槽</span></span></div>
+    <div class="m">受付 2026-04-01 〜 — ｜令和8年度</div>
+    <div class="m ctx">香川県の単独槽 残存 <b>79,158基</b>｜浄化槽工事業 428者｜<b>1社あたり 185基</b></div>
+    <div class="m"><a href="https://www.town.manno.lg.jp/page/7707.html" target="_blank" rel="noopener">まんのう町合併処理浄化槽設置整備事業補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="埼玉県松伏町浄化槽設置整備事業補助金" data-pref="埼玉県">
+  <div class="rk">20</div>
+  <div class="cb">
+    <h3>松伏町<span class="pf">埼玉県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>52.4万円</b></div>
+    <div class="bits"><span>本体 43.4万円<span class="u">/7人槽</span></span><span>単独槽の撤去費 3万円</span><span>宅内配管工事費 6万円</span></div>
+    <div class="m">受付 2026-05-11 〜 — ｜枠 5人槽3基・7人槽3基（先着順）｜令和8年度</div>
+    <div class="m ctx">埼玉県の単独槽 残存 <b>220,125基</b>｜浄化槽工事業 1,034者｜<b>1社あたり 213基</b></div>
+    <div class="m"><a href="https://www.town.matsubushi.lg.jp/0000002165.html" target="_blank" rel="noopener">浄化槽設置整備事業補助金 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="静岡県伊豆の国市合併処理浄化槽設置整備事業費補助金制度" data-pref="静岡県">
+  <div class="rk">21</div>
+  <div class="cb">
+    <h3>伊豆の国市<span class="pf">静岡県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>35.7万円</b></div>
+    <div class="bits"><span>本体 20.7万円<span class="u">/7人槽</span></span><span>宅内配管工事費 15万円</span></div>
+    <div class="m">受付 記載なし </div>
+    <div class="m ctx">静岡県の単独槽 残存 <b>250,844基</b>｜浄化槽工事業 791者｜<b>1社あたり 317基</b></div>
+    <div class="m"><a href="https://www.city.izunokuni.shizuoka.jp/hai/jokaso.html" target="_blank" rel="noopener">合併処理浄化槽設置整備事業費補助金制度 — 市町村の公式ページ →</a></div>
+  </div>
+</article><article class="c" data-t="埼玉県東松山市合併処理浄化槽への転換補助制度" data-pref="埼玉県">
+  <div class="rk">22</div>
+  <div class="cb">
+    <h3>東松山市<span class="pf">埼玉県</span></h3>
+    <div class="tot">転換1件あたりの補助上限の合計 <b>21万円</b></div>
+    <div class="bits"><span>単独槽の撤去費 6万円</span><span>宅内配管工事費 15万円</span></div>
+    <div class="m">受付 — 〜 2027-01-15 ｜令和8年度</div>
+    <div class="m ctx">埼玉県の単独槽 残存 <b>220,125基</b>｜浄化槽工事業 1,034者｜<b>1社あたり 213基</b></div>
+    <div class="m"><a href="https://www.city.higashimatsuyama.lg.jp/soshiki/45/3583.html" target="_blank" rel="noopener">合併処理浄化槽への転換補助制度 — 市町村の公式ページ →</a></div>
+  </div>
+</article></div>
+<p class="empty" id="none" style="display:none">該当する市町村はありません。</p>
+
+<h2>② 都道府県別 単独処理浄化槽の残存基数（47件）</h2>
+<div class="lead">環境省「令和7年度 浄化槽の指導普及調査」（令和6年度末現在）より。<b>1社あたり</b>＝残存基数÷浄化槽工事業の登録数。<b>解消年数</b>＝残存基数÷令和6年度の国庫助成による単独転換基数。</div>
+<div class="tw"><table>
+<thead><tr><th>#</th><th>都道府県</th><th>単独槽 残存基数</th><th>単独槽比率</th><th>浄化槽工事業</th><th>1社あたり</th><th>R6転換(国庫助成)</th><th>解消年数</th></tr></thead>
+<tbody><tr data-t="愛知県">
+  <td class="n">1</td><td class="pn">愛知県</td>
+  <td class="n b">294,630</td>
+  <td class="n">54.6%</td>
+  <td class="n">568</td>
+  <td class="n b">519</td>
+  <td class="n">557</td>
+  <td class="n">529年</td></tr><tr data-t="静岡県">
+  <td class="n">2</td><td class="pn">静岡県</td>
+  <td class="n b">250,844</td>
+  <td class="n">53.9%</td>
+  <td class="n">791</td>
+  <td class="n b">317</td>
+  <td class="n">1,266</td>
+  <td class="n">198年</td></tr><tr data-t="埼玉県">
+  <td class="n">3</td><td class="pn">埼玉県</td>
+  <td class="n b">220,125</td>
+  <td class="n">46.4%</td>
+  <td class="n">1,034</td>
+  <td class="n b">213</td>
+  <td class="n">412</td>
+  <td class="n">534年</td></tr><tr data-t="千葉県">
+  <td class="n">4</td><td class="pn">千葉県</td>
+  <td class="n b">183,837</td>
+  <td class="n">41.2%</td>
+  <td class="n">1,257</td>
+  <td class="n b">146</td>
+  <td class="n">458</td>
+  <td class="n">401年</td></tr><tr data-t="群馬県">
+  <td class="n">5</td><td class="pn">群馬県</td>
+  <td class="n b">153,769</td>
+  <td class="n">50.2%</td>
+  <td class="n">933</td>
+  <td class="n b">165</td>
+  <td class="n">479</td>
+  <td class="n">321年</td></tr><tr data-t="福島県">
+  <td class="n">6</td><td class="pn">福島県</td>
+  <td class="n b">142,569</td>
+  <td class="n">51.3%</td>
+  <td class="n">710</td>
+  <td class="n b">201</td>
+  <td class="n">279</td>
+  <td class="n">511年</td></tr><tr data-t="徳島県">
+  <td class="n">7</td><td class="pn">徳島県</td>
+  <td class="n b">123,332</td>
+  <td class="n">59.5%</td>
+  <td class="n">305</td>
+  <td class="n b">404</td>
+  <td class="n">282</td>
+  <td class="n">437年</td></tr><tr data-t="新潟県">
+  <td class="n">8</td><td class="pn">新潟県</td>
+  <td class="n b">121,513</td>
+  <td class="n">66.4%</td>
+  <td class="n">811</td>
+  <td class="n b">150</td>
+  <td class="n">146</td>
+  <td class="n">832年</td></tr><tr data-t="鹿児島県">
+  <td class="n">9</td><td class="pn">鹿児島県</td>
+  <td class="n b">101,214</td>
+  <td class="n">30.9%</td>
+  <td class="n">1,143</td>
+  <td class="n b">89</td>
+  <td class="n">908</td>
+  <td class="n">111年</td></tr><tr data-t="和歌山県">
+  <td class="n">10</td><td class="pn">和歌山県</td>
+  <td class="n b">97,132</td>
+  <td class="n">45.8%</td>
+  <td class="n">509</td>
+  <td class="n b">191</td>
+  <td class="n">162</td>
+  <td class="n">600年</td></tr><tr data-t="三重県">
+  <td class="n">11</td><td class="pn">三重県</td>
+  <td class="n b">96,027</td>
+  <td class="n">42.6%</td>
+  <td class="n">457</td>
+  <td class="n b">210</td>
+  <td class="n">139</td>
+  <td class="n">691年</td></tr><tr data-t="岐阜県">
+  <td class="n">12</td><td class="pn">岐阜県</td>
+  <td class="n b">91,076</td>
+  <td class="n">51.4%</td>
+  <td class="n">476</td>
+  <td class="n b">191</td>
+  <td class="n">253</td>
+  <td class="n">360年</td></tr><tr data-t="愛媛県">
+  <td class="n">13</td><td class="pn">愛媛県</td>
+  <td class="n b">89,435</td>
+  <td class="n">49.3%</td>
+  <td class="n">427</td>
+  <td class="n b">209</td>
+  <td class="n">152</td>
+  <td class="n">588年</td></tr><tr data-t="神奈川県">
+  <td class="n">14</td><td class="pn">神奈川県</td>
+  <td class="n b">86,069</td>
+  <td class="n">65.3%</td>
+  <td class="n">544</td>
+  <td class="n b">158</td>
+  <td class="n">188</td>
+  <td class="n">458年</td></tr><tr data-t="茨城県">
+  <td class="n">15</td><td class="pn">茨城県</td>
+  <td class="n b">79,572</td>
+  <td class="n">31.5%</td>
+  <td class="n">953</td>
+  <td class="n b">83</td>
+  <td class="n">726</td>
+  <td class="n">110年</td></tr><tr data-t="香川県">
+  <td class="n">16</td><td class="pn">香川県</td>
+  <td class="n b">79,158</td>
+  <td class="n">43.8%</td>
+  <td class="n">428</td>
+  <td class="n b">185</td>
+  <td class="n">487</td>
+  <td class="n">163年</td></tr><tr data-t="山梨県">
+  <td class="n">17</td><td class="pn">山梨県</td>
+  <td class="n b">69,874</td>
+  <td class="n">57.2%</td>
+  <td class="n">401</td>
+  <td class="n b">174</td>
+  <td class="n">64</td>
+  <td class="n">1092年</td></tr><tr data-t="青森県">
+  <td class="n">18</td><td class="pn">青森県</td>
+  <td class="n b">67,004</td>
+  <td class="n">57.7%</td>
+  <td class="n">384</td>
+  <td class="n b">174</td>
+  <td class="n">58</td>
+  <td class="n">1155年</td></tr><tr data-t="広島県">
+  <td class="n">19</td><td class="pn">広島県</td>
+  <td class="n b">66,530</td>
+  <td class="n">38.0%</td>
+  <td class="n">717</td>
+  <td class="n b">93</td>
+  <td class="n">113</td>
+  <td class="n">589年</td></tr><tr data-t="奈良県">
+  <td class="n">20</td><td class="pn">奈良県</td>
+  <td class="n b">63,835</td>
+  <td class="n">65.1%</td>
+  <td class="n">328</td>
+  <td class="n b">195</td>
+  <td class="n">28</td>
+  <td class="n">2280年</td></tr><tr data-t="宮崎県">
+  <td class="n">21</td><td class="pn">宮崎県</td>
+  <td class="n b">59,195</td>
+  <td class="n">40.4%</td>
+  <td class="n">409</td>
+  <td class="n b">145</td>
+  <td class="n">540</td>
+  <td class="n">110年</td></tr><tr data-t="大分県">
+  <td class="n">22</td><td class="pn">大分県</td>
+  <td class="n b">58,489</td>
+  <td class="n">38.7%</td>
+  <td class="n">578</td>
+  <td class="n b">101</td>
+  <td class="n">619</td>
+  <td class="n">94年</td></tr><tr data-t="岡山県">
+  <td class="n">23</td><td class="pn">岡山県</td>
+  <td class="n b">52,895</td>
+  <td class="n">31.5%</td>
+  <td class="n">544</td>
+  <td class="n b">97</td>
+  <td class="n">118</td>
+  <td class="n">448年</td></tr><tr data-t="沖縄県">
+  <td class="n">24</td><td class="pn">沖縄県</td>
+  <td class="n b">50,898</td>
+  <td class="n">55.1%</td>
+  <td class="n">169</td>
+  <td class="n b">301</td>
+  <td class="n">18</td>
+  <td class="n">2828年</td></tr><tr data-t="熊本県">
+  <td class="n">25</td><td class="pn">熊本県</td>
+  <td class="n b">50,728</td>
+  <td class="n">34.7%</td>
+  <td class="n">792</td>
+  <td class="n b">64</td>
+  <td class="n">128</td>
+  <td class="n">396年</td></tr><tr data-t="大阪府">
+  <td class="n">26</td><td class="pn">大阪府</td>
+  <td class="n b">50,556</td>
+  <td class="n">52.3%</td>
+  <td class="n">126</td>
+  <td class="n b">401</td>
+  <td class="n">17</td>
+  <td class="n">2974年</td></tr><tr data-t="山口県">
+  <td class="n">27</td><td class="pn">山口県</td>
+  <td class="n b">49,261</td>
+  <td class="n">40.2%</td>
+  <td class="n">626</td>
+  <td class="n b">79</td>
+  <td class="n">71</td>
+  <td class="n">694年</td></tr><tr data-t="栃木県">
+  <td class="n">28</td><td class="pn">栃木県</td>
+  <td class="n b">48,555</td>
+  <td class="n">30.0%</td>
+  <td class="n">333</td>
+  <td class="n b">146</td>
+  <td class="n">522</td>
+  <td class="n">93年</td></tr><tr data-t="高知県">
+  <td class="n">29</td><td class="pn">高知県</td>
+  <td class="n b">40,599</td>
+  <td class="n">37.8%</td>
+  <td class="n">338</td>
+  <td class="n b">120</td>
+  <td class="n">36</td>
+  <td class="n">1128年</td></tr><tr data-t="福岡県">
+  <td class="n">30</td><td class="pn">福岡県</td>
+  <td class="n b">40,024</td>
+  <td class="n">21.7%</td>
+  <td class="n">744</td>
+  <td class="n b">54</td>
+  <td class="n">125</td>
+  <td class="n">320年</td></tr><tr data-t="兵庫県">
+  <td class="n">31</td><td class="pn">兵庫県</td>
+  <td class="n b">33,696</td>
+  <td class="n">42.1%</td>
+  <td class="n">417</td>
+  <td class="n b">81</td>
+  <td class="n">29</td>
+  <td class="n">1162年</td></tr><tr data-t="島根県">
+  <td class="n">32</td><td class="pn">島根県</td>
+  <td class="n b">30,766</td>
+  <td class="n">43.0%</td>
+  <td class="n">441</td>
+  <td class="n b">70</td>
+  <td class="n">46</td>
+  <td class="n">669年</td></tr><tr data-t="山形県">
+  <td class="n">33</td><td class="pn">山形県</td>
+  <td class="n b">30,259</td>
+  <td class="n">46.4%</td>
+  <td class="n">423</td>
+  <td class="n b">72</td>
+  <td class="n">85</td>
+  <td class="n">356年</td></tr><tr data-t="石川県">
+  <td class="n">34</td><td class="pn">石川県</td>
+  <td class="n b">26,396</td>
+  <td class="n">51.6%</td>
+  <td class="n">161</td>
+  <td class="n b">164</td>
+  <td class="n">87</td>
+  <td class="n">303年</td></tr><tr data-t="秋田県">
+  <td class="n">35</td><td class="pn">秋田県</td>
+  <td class="n b">26,171</td>
+  <td class="n">36.5%</td>
+  <td class="n">456</td>
+  <td class="n b">57</td>
+  <td class="n">22</td>
+  <td class="n">1190年</td></tr><tr data-t="富山県">
+  <td class="n">36</td><td class="pn">富山県</td>
+  <td class="n b">24,786</td>
+  <td class="n">65.8%</td>
+  <td class="n">222</td>
+  <td class="n b">112</td>
+  <td class="n">31</td>
+  <td class="n">800年</td></tr><tr data-t="宮城県">
+  <td class="n">37</td><td class="pn">宮城県</td>
+  <td class="n b">19,950</td>
+  <td class="n">25.5%</td>
+  <td class="n">516</td>
+  <td class="n b">39</td>
+  <td class="n">7</td>
+  <td class="n">2850年</td></tr><tr data-t="福井県">
+  <td class="n">38</td><td class="pn">福井県</td>
+  <td class="n b">18,128</td>
+  <td class="n">53.2%</td>
+  <td class="n">308</td>
+  <td class="n b">59</td>
+  <td class="n">15</td>
+  <td class="n">1209年</td></tr><tr data-t="北海道">
+  <td class="n">39</td><td class="pn">北海道</td>
+  <td class="n b">17,900</td>
+  <td class="n">22.7%</td>
+  <td class="n">806</td>
+  <td class="n b">22</td>
+  <td class="n">24</td>
+  <td class="n">746年</td></tr><tr data-t="佐賀県">
+  <td class="n">40</td><td class="pn">佐賀県</td>
+  <td class="n b">16,171</td>
+  <td class="n">27.3%</td>
+  <td class="n">394</td>
+  <td class="n b">41</td>
+  <td class="n">31</td>
+  <td class="n">522年</td></tr><tr data-t="長崎県">
+  <td class="n">41</td><td class="pn">長崎県</td>
+  <td class="n b">12,941</td>
+  <td class="n">15.8%</td>
+  <td class="n">682</td>
+  <td class="n b">19</td>
+  <td class="n">64</td>
+  <td class="n">202年</td></tr><tr data-t="鳥取県">
+  <td class="n">42</td><td class="pn">鳥取県</td>
+  <td class="n b">11,983</td>
+  <td class="n">49.6%</td>
+  <td class="n">207</td>
+  <td class="n b">58</td>
+  <td class="n">76</td>
+  <td class="n">158年</td></tr><tr data-t="長野県">
+  <td class="n">43</td><td class="pn">長野県</td>
+  <td class="n b">11,872</td>
+  <td class="n">13.8%</td>
+  <td class="n">692</td>
+  <td class="n b">17</td>
+  <td class="n">11</td>
+  <td class="n">1079年</td></tr><tr data-t="京都府">
+  <td class="n">44</td><td class="pn">京都府</td>
+  <td class="n b">9,979</td>
+  <td class="n">31.0%</td>
+  <td class="n">425</td>
+  <td class="n b">23</td>
+  <td class="n">4</td>
+  <td class="n">2495年</td></tr><tr data-t="滋賀県">
+  <td class="n">45</td><td class="pn">滋賀県</td>
+  <td class="n b">9,128</td>
+  <td class="n">33.4%</td>
+  <td class="n">196</td>
+  <td class="n b">47</td>
+  <td class="n">8</td>
+  <td class="n">1141年</td></tr><tr data-t="東京都">
+  <td class="n">46</td><td class="pn">東京都</td>
+  <td class="n b">7,890</td>
+  <td class="n">47.6%</td>
+  <td class="n">290</td>
+  <td class="n b">27</td>
+  <td class="n">11</td>
+  <td class="n">717年</td></tr><tr data-t="岩手県">
+  <td class="n">47</td><td class="pn">岩手県</td>
+  <td class="n b">3,850</td>
+  <td class="n">6.4%</td>
+  <td class="n">498</td>
+  <td class="n b">8</td>
+  <td class="n">3</td>
+  <td class="n">1283年</td></tr></tbody>
+</table></div>
+
+<div class="note">
+<b>この数字の読み方と、はっきりした限界</b>
+<ul>
+<li>①の「補助上限の合計」は、7人槽（記載がなければ5人槽または10人槽）の本体補助＋単独槽の撤去費補助＋宅内配管工事費補助を足しただけの値です。<b>いずれも上限額であって、実際の交付額ではありません。</b>浄化槽の型式・加算要件・所得要件・区域要件で実額は変わり、補助対象工事費の実費が上限を下回れば実費が上限になります。必ず出典先で確認してください。</li>
+<li>②の残存基数・工事業者数は<b>都道府県単位</b>の統計です。市町村ごとの残存基数は国が公表していないため、①のカードに併記しているのも「その市町村が属する都道府県の値」です。市町村の値ではありません。</li>
+<li>「解消年数」は令和6年度の実績がそのまま続くと仮定した単純な割り算で、予測ではありません。</li>
+<li>受付期間・予算枠は年度ごとに更新されます。当サイトの収集日より後に改定されている可能性があります。</li>
+<li>このサイトは事実と出典リンクだけを掲載しています。要綱の本文は転載していません。</li>
+</ul>
+</div>
+
+</div></main>
+<footer>
+出典：環境省「令和7年度 浄化槽の指導普及調査」（<a href="https://www.env.go.jp/recycle/jokaso/data/" target="_blank" rel="noopener" style="color:inherit">環境省 浄化槽データ</a>）／各市町村の公開ページ。<br>
+掲載しているのは公表値と公式リンクのみです。申請の可否・金額は各市町村の窓口にご確認ください。<br>収集日：2026-09-09
+</footer>
+<script>
+(function(){
+  var q=document.getElementById('q'),pf=document.getElementById('pf'),
+      cs=[].slice.call(document.querySelectorAll('#list .c')),none=document.getElementById('none');
+  function f(){
+    var t=(q.value||'').trim().toLowerCase(),p=pf.value,n=0;
+    cs.forEach(function(c){
+      var ok=(!t||c.dataset.t.indexOf(t)>=0)&&(!p||c.dataset.pref===p);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    none.style.display=(n||!cs.length)?'none':'';
+  }
+  q.addEventListener('input',f); pf.addEventListener('change',f);
+})();
+</script>
+
+
+<script data-goatcounter="https://junikeda.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body></html>
